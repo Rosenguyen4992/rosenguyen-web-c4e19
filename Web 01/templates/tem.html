@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Template1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>C4E Blog</h1>
+    {% for post in posts %}
+        <div>
+            <!-- jinja2 -->
+            <h3>{{ post.title }}</h3>
+            <p>
+                {{ post.content }}
+            </p>
+            <i>By:
+                <i>{{ "Mr." if post.gender ==1 else "Miss." }}</i>>
+                <i>{{ post.author }}</i>
+            <hr>
+        </div>
+    {% endfor %}
+    <!-- <div>
+        <h3>Bài thơ về (.)(.)</h3>
+        <p>
+            Cuộc đời thật lắm bất công
+            <br>
+            Thằng 2 (.)(.) thằng 0 (.)(.)
+        </p>
+        <i>By: Nhung nhúc</i>
+        <hr>
+    </div>
+    <div>
+        <h3>Bài thơ về cướp biển</h3>
+        <p>
+            Rose are red
+            <br>
+            Violets are blue
+            <br>
+            F*** off
+        </p>
+        <i>By: Nhổn làm</i>
+        <hr>
+    </div> -->
+</body>
+</html>

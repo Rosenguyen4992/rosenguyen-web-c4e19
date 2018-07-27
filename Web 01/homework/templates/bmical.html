@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BMI Calculation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <h3> Your BMI is {{ bmi_result }} </h3>
+    <div>
+        {% if bmi_result < 16 %}
+            <i> You are Severely Underweight </i>
+        {% elif 16 <= bmi_result and bmi_result < 18.5 %}
+            <i> You are Underweight </i>
+        {% elif 18.5 <= bmi_result and bmi_result < 25 %}
+            <i> You are Normal </i>
+        {% elif 20 <= bmi_result and bmi_result < 30 %}
+            <i> You are Overweight </i>
+        {% else %}
+            <i> You are Obese </i>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
