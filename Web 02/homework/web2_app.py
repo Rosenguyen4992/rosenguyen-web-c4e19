@@ -14,9 +14,9 @@ def index():
     return render_template('web2_index.html')
 
 @app.route('/filter')
-def filter(gender, contacted):
-    top10_service2 = Service2.objects(gender=gender, contacted=contacted).limit(10)
-    return render_template('web2_index.html', top10_service2=top10_service2)
+def filter():
+    top10_service2 = Service2.objects(gender=1, contacted=False).limit(10)
+    return render_template('web2_filter.html', top10_service2=top10_service2)
 
 
 @app.route('/customer')
