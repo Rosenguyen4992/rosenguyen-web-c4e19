@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>CUSTOMER LIST</h1>
+    {% for service2 in all_service2 %}
+    <div>
+        <b>Tên: {{service2.name}} </b>
+        <p>Giới tính: {{ "Nữ" if service2.gender ==1 else "Nam" }}</p>
+        <p>Email: {{service2.email}}</p>
+        <p>Số điện thoại: {{service2.phonenumber}}</p>
+        <p>Nghề nghiệp: {{service2.job}}</p>
+        <p>Công ty: {{service2.company}}</p>
+        <p>Tình trạng liên hệ: {{"Đã liên hệ" if service2.contacted ==1 else "Chưa liên hệ"}}</p>
+        <hr>
+        <br>
+    </div>
+    {% endfor %}
+</body>
+</html>
