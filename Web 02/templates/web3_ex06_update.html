@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>New Service</h1>
+    <form method = 'post'>
+            <lable>Tên</lable>
+            <input type="text" name="name" value="{{id.name}}">
+            <br>   
+    
+            <lable>YOB</lable>
+            <input type="text" name="yob" value="{{id.yob}}">
+            <br>
+            
+            <lable>So dien thoai</lable>
+            <input type="text" name="phone" value="{{id.phone}}">
+            <br>    
+            
+            <lable>Chieu cao</lable>
+            <input type="text" name="height" value="{{id.height}}">
+            <br>
+
+            <lable>Địa chỉ</lable>
+            <input type="text" name="address" value="{{id.address}}">
+            <br>
+
+            <lable>Giới tính</lable>
+            <input type="radio" name="gender" value=1 {% if id.gender==0 %} checked="checked"{% endif %}>Nam
+            <input type="radio" name="gender" value=0 {% if id.gender==0 %} checked="checked"{% endif %}>Nữ
+            <br>
+        
+            <input type="submit" value="Cập nhật">
+            <br>
+    
+        </form>
+</body>
+</html>

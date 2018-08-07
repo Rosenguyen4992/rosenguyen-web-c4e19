@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+        <i>Customer List </i>
+        {% for service in all_service %}
+        <div>
+            {% if service.gender == 1 %}
+            <img src="https://thumb.ibb.co/iJ7MTz/anhthat4.jpg">
+            {% else %}
+            <img src="https://thumb.ibb.co/f9qQoz/anhthat1.jpg">
+            {% endif %}
+            <br>
+            <b>Tên: {{ service.name }}</b>
+            <p>Năm sinh: {{ service.yob }}</p>
+            <p>Giới tính: {{ "Male" if service.gender == 1 else "Female" }}</p>
+            <p>Chiều cao: {{ service.height }}</p>
+            <p>Điện thoại: {{ service.phone }} </p>
+            <p>Địa chỉ: {{ service.address }} </p>
+            <p>Trạng thái: {{ "Bận" if service.gender else "Rảnh" }} </p>
+            <p>Mô tả: {{ service.description }} </p>
+            <p>Số đo 3 vòng: {{ service.measurement }} </p>
+            <hr>
+        {% endfor %}
+        </div>
+</body>
+</html>

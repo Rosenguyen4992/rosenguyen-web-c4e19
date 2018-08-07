@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customer List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+        <i>Customer List </i>
+        {% for service in all_service %}
+        <div>
+            {% if service.gender == 1 %}
+            <img src="https://thumb.ibb.co/iJ7MTz/anhthat4.jpg">
+            {% else %}
+            <img src="https://thumb.ibb.co/f9qQoz/anhthat1.jpg">
+            {% endif %}
+            <br>
+            <b>Tên:</b> {{ service.name }}
+            <p><b>Năm sinh:</b> {{ service.yob }}</p>
+            <p><b>Giới tính:</b> {{ "Male" if service.gender == 1 else "Female" }}</p>
+            <a href="{{ url_for('detail', service_id = service.id) }}">Xem chi tiết</a>>
+            <hr>
+        {% endfor %}
+        </div>
+</body>
+</html>

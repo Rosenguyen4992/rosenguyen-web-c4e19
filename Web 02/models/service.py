@@ -12,6 +12,8 @@ class Service(Document):
     phone = StringField()
     address = StringField()
     status = BooleanField()
+    description = StringField()
+    measurement = ListField()
 
 # # new_service = Service(
 # #     name = "Linh Ka",
