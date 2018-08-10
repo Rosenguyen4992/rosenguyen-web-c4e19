@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Administration Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Administration Page</h1>
+    <a href="{{ url_for('logout')}}">Đăng xuất</a>
+    <br> <br> <br>
+    <form method="post">
+        <label>Link</label>
+        <input type="text" name="link">
+        <input type="Submit">
+    </form>
+    <br>
+    <br>
+    <table border='1px'>
+        <thead>
+            <th>STT</th>
+            <th>Title</th>
+            <th>Link</th>
+            <th>Thumbnail</th>
+            <th>View</th>
+        </thead>
+        <tbody>
+            {% for video in all_video %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ video.title }}</td>
+                <td><a href="{{ video.link }}" target ="_blank">View</a></td>    
+                <td><img src= "{{ video.thumbnail }}" alt="Smiley face" height="42"></td>
+                <td>{{ video.view }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>
