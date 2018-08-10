@@ -18,15 +18,15 @@
             <img src="https://thumb.ibb.co/f9qQoz/anhthat1.jpg">
             {% endif %}
             <br>
-            <b>Tên: {{ service.name }}</b>
-            <p>Năm sinh: {{ service.yob }}</p>
-            <p>Giới tính: {{ "Male" if service.gender == 1 else "Female" }}</p>
-            <p>Chiều cao: {{ service.height }}</p>
-            <p>Điện thoại: {{ service.phone }} </p>
-            <p>Địa chỉ: {{ service.address }} </p>
-            <p>Trạng thái: {{ "Bận" if service.gender else "Rảnh" }} </p>
-            <p>Mô tả: {{ service.description }} </p>
-            <p>Số đo 3 vòng: {{ service.measurement }} </p>
+            <p></p><b>Tên:</b> {{ service.name }}<p></p>
+            <p><b>Năm sinh:</b> {{ service.yob }}</p>
+            <p><b>Giới tính:</b> {{ "Male" if service.gender == 1 else "Female" }}</p>
+            <p><b>Chiều cao:</b> {{ service.height }}</p>
+            <p><b>Điện thoại:</b> {{ service.phone }} </p>
+            <p><b>Địa chỉ:</b> {{ service.address }} </p>
+            <p><b>Trạng thái:</b> {{ "Bận" if service.gender else "Rảnh" }} </p>
+            <p><b>Mô tả:</b> {{ service.description }} </p>
+            <p><b>Số đo 3 vòng:</b> {{ service.measurement }} </p>
             <hr>
         {% endfor %}
         </div>
