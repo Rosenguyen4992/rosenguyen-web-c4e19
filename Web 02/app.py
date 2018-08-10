@@ -4,6 +4,7 @@ import mlab
 from models.user import User
 from models.order import Order
 import datetime
+from models.email import email
 
 app = Flask(__name__)
 
@@ -162,8 +163,11 @@ def login():
 
 @app.route('/logout')
 def logout():
-    del session['logged_in']
-    return "Bạn đã thoát đăng nhập thành công"
+    if 'service_id' in session:
+        del session['logged_in']
+        return "Bạn đã thoát đăng nhập thành công"
+    else:
+        return "Vui lòng đăng nhập hoặc đăng ký trước"
 
 
 @app.route('/order/')
@@ -195,7 +199,7 @@ def approve(service_id):
     service_update = Service.objects().with_id(id)
     service_update.update(set__status = True)
     
-    email(service_update.email)
+    # email(service_update.email)
 
     return "Da phe duyet"
 
